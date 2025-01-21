@@ -1,0 +1,60 @@
+1. Создать в pycharm professional edition проект с шаблоном django.
+
+2. После создания проекта, надо перейти в терминал(alt+f12) 
+и создать приложение (application) командой 
+python manage.py startapp appname
+Пример:
+python manage.py startapp lesson_3_app
+
+3. Далее надо зарегестрировать новое приложение в файле settings.py
+в списке INSTALLED_APPS
+
+4. далее запускаем сервер нажатием пуска справа вверху или shift+f10 
+или в терминале python manage.py runserver
+
+5. В консоли появится ссылка на сервер. Можно кликнуть на неё.
+
+6. Далее в модуле models в приложении создаём модели(таблицы).
+
+7. Далее проводим операцию миграции(запись моделей в базу данных)
+Для этого откройте терминал и напишите команду:
+python manage.py makemigrations
+
+Так мы подготовим миграцию модели в базу данных.
+После этого ещё надо выполнить саму миграцию командой в терминале:
+python manage.py migrate
+
+8. Далее работаем в файлах views.py и urls.py
+В views создаются функции,
+в urls прописываются пути, при заходе на которые запускаются соответствующие функции
+Не забывайте про импорты модулей.
+В views подключаем модели, в urls подключаем views
+localhost:8000/test_database
+
+9. Регистрируем модели в админке.
+Октрываем файл admin.py
+импортируем from lesson_3_app.models import Person
+и далее пишем 
+admin.site.register(Person)
+
+10. Создаём суперпользователя со всеми правами:
+В терминале:
+python manage.py createsuperuser
+вводим имя пользователя, почту, потом пароль, повторяем пароль
+
+Переходим по адресу:
+localhost:8000/admin
+и вводим данные админа.
+
+
+
+lesson_3_app
+    templates
+        lesson_3_app
+            templates
+    static
+        lesson_3_app
+            static
+                css
+                img
+                js
